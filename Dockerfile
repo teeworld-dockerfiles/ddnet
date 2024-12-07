@@ -15,12 +15,7 @@ RUN apk add --no-cache \
 	python3 \
 	sqlite-dev
 
-COPY ./modes/ddnet /tw/sources
-COPY scripts/* /usr/local/bin
-
-# Set max ECON clients
-ARG ECON_CLIENTS
-RUN /bin/sh /usr/local/bin/patches.sh
+COPY . /tw/sources
 
 WORKDIR /tw/build
 
